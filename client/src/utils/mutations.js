@@ -32,6 +32,14 @@ mutation saveBook($authors: [String], $description: String, $bookId: String, $im
 }
 `
 
+export const LOGIN_USER = gql`
+
+mutation login($email: String!, $password: String!) {
+  login(email: $email, password: $password) {
+    token
+  }
+}
+`
 
 // export const LOGIN_USER = gql`
 // mutation login($email: String!, $password: String!) {
