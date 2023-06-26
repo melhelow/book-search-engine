@@ -43,7 +43,7 @@ const LoginForm = () => {
 
       // const { token, user } = await response.json();
       const token = response.data.login.token;
-      console.log(user);
+      
       Auth.login(token);
     } catch (err) {
       console.error(err);

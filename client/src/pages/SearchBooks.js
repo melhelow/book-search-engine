@@ -9,15 +9,20 @@ import {
   Card,
   Row
 } from 'react-bootstrap';
+import { GET_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
-// import { saveBook, searchGoogleBooks } from '../utils/API';
+import { searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 
 const SearchBooks = () => {
 
   // create state for holding returned google api data
   const [searchedBooks, setSearchedBooks] = useState([]);
+  const [saveBook, { error }] = useMutation(SAVE_BOOK , {
+    refetchQueries:[{query:GET_ME}]
+  });
+
   // create state for holding our search field data
   const [searchInput, setSearchInput] = useState('');
 
@@ -64,7 +69,6 @@ const SearchBooks = () => {
 
   // create function to handle saving a book to our database
   const handleSaveBook = async (bookId) => {
-    const [saveBook, { error }] = useMutation(SAVE_BOOK);
     // find the book in `searchedBooks` state by the matching id
     const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
 
@@ -87,9 +91,9 @@ const SearchBooks = () => {
         }
       });
 
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
+      // if (!response.ok) {
+      //   throw new Error('something went wrong!');
+      // }
 
       // if book successfully saves to user's account, save book id to state
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);
