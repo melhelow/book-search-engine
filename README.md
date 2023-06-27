@@ -12,7 +12,7 @@ in this 21th assignment  i started with a given code
 
 ## used technologies
 
-- REACT, GetQL, Apollo, Node.js, Express.js, MongoDB, Heroku, Bootstrap, CSS, HTML, JavaScript, Git, GitHub, VS Code, Google Chrome, and Google.
+- REACT, Apollo, Node.js, Express.js, MongoDB, Heroku, Bootstrap, CSS, HTML, JavaScript,GitHub, VS Code, Google Chrome, and Google.
 
 ![Getting Started](./Assets/images/bookse-1.png)
 ![Getting Started](./Assets/images/bookse-2.png)
