@@ -14,12 +14,12 @@ in this 21th assignment  i started with a given code
 
 - REACT, Apollo, Node.js, Express.js, MongoDB, Heroku, Bootstrap, CSS, HTML, JavaScript,GitHub, VS Code, Google Chrome, and Google.
 
-![Getting Started](./Assets/images/bookse-1.png)
-![Getting Started](./Assets/images/bookse-2.png)
-![Getting Started](./Assets/images/bookse-3.png)
-![Getting Started](./Assets/images/bookse-4.png)
-![Getting Started](./Assets/images/bookse-5.png)
-![Getting Started](./Assets/images/bookse-6.png)
+![Getting Started](./Assets/images/book1.png)
+![Getting Started](./Assets/images/book2.png)
+![Getting Started](./Assets/images/book3.png)
+![Getting Started](./Assets/images/book4.png)
+![Getting Started](./Assets/images/book5.png)
+![Getting Started](./Assets/images/book6.png)
 
 ## github 
 https://github.com/melhelow/book-search-engine
