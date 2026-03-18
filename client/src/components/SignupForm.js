@@ -18,6 +18,7 @@ const SignupForm = () => {
   const [validated] = useState(false);
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('Something went wrong with your signup!');
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -27,11 +28,16 @@ const SignupForm = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // check if form has everything (as per react-bootstrap docs)
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
+    if (!userFormData.username) {
+      setShowAlert(true);
+      setAlertMessage('Please enter a username.');
+      return;
+    }
+
+    if (userFormData.password.length < 8) {
+      setShowAlert(true);
+      setAlertMessage('Password must be at least 8 characters long.');
+      return;
     }
 
     try {
@@ -55,6 +61,7 @@ const SignupForm = () => {
     } catch (err) {
       console.error(err);
       setShowAlert(true);
+      setAlertMessage('Something went wrong with your signup!');
     }
 
     setUserFormData({
@@ -70,7 +77,7 @@ const SignupForm = () => {
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         {/* show alert if server response is bad */}
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
-          Something went wrong with your signup!
+          {alertMessage}
         </Alert>
 
         <Form.Group className='mb-3'>
